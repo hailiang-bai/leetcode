@@ -1,0 +1,23 @@
+* 
+
+```
+class Solution {
+    public boolean canJump(int[] nums) {
+        int max=0;
+        for(int i=0;i<nums.length;i++){
+            //如果累计最大跳跃长度小于当前元素下标，即到达不了当前位置
+            if(max<i){
+                return false;
+            }
+            //累计最大跳跃长度
+            max=Math.max(nums[i]+i,max);
+            //如果累计长度大于数组长度，则代表一定可以跳到最后位置
+            if(max>=nums.length-1){
+                return true;
+            }
+        }
+        return true;
+    }
+}
+```
+
