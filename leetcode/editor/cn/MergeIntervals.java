@@ -39,15 +39,10 @@ public class MergeIntervals{
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int[][] merge(int[][] intervals) {
+        if(intervals.length==0){
+            return new int[0][2];
+        }
 
-//        for (int i = 0; i < intervals.length; i++) {
-//            for (int j = 0; j < intervals.length; j++) {
-//                if(intervals[i][0]<intervals[j][0] && intervals[i][1] < intervals[j][1] &&intervals[i][1]>=intervals[j][0]){
-//                    System.out.println(intervals[i][0]+ " "+intervals[j][1]);
-//                }
-//            }
-//
-//        }
         //排序，重写Comparator
         Arrays.sort(intervals, new Comparator<int[]>() {
             @Override
@@ -56,23 +51,16 @@ class Solution {
             }
         });
         ArrayList<int[]> mergeList = new ArrayList<int[]>();
-//        if (intervals.length==1){
-//            return intervals;
-//        }
-        for (int i = 0; i < intervals.length-1; i++) {
-//            if(intervals[i][1]>intervals[i+1][0]&&intervals[i][1]<intervals[i+1][1]){
-//                lists.add(new int[]{intervals[i][0],intervals[i+1][1]});
-//                i++;
-//            }else if (intervals[i+1][0]>=intervals[i][0]&&intervals[i+1][1]<=intervals[i][1]){
-//                lists.add(new int[]{intervals[i][0],intervals[i][1]});
-//                i++;
-//            }else{
-//                lists.add(new int[]{intervals[i][0],intervals[i][1]});
-//                if(i==intervals.length-2){
-//                    lists.add(new int[]{intervals[i+1][0],intervals[i+1][1]});
-//                }
-//            }
-            if(mergeList.size()==0 )
+
+        for (int i = 0; i < intervals.length; i++) {
+            int L=intervals[i][0];
+            int R=intervals[i][1];
+            if(i==0||mergeList.get(mergeList.size()-1)[1] < L){
+                mergeList.add(new int[] {L,R});
+            }else {
+                mergeList.get(mergeList.size()-1)[1]=Math.max(mergeList.get(mergeList.size()-1)[1],R);
+            }
+
         }
 
 
