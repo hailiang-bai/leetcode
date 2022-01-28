@@ -1,6 +1,7 @@
 package leetcode.editor.cn.construction;
 
 
+import leetcode.editor.cn.MaximumDepthOfBinaryTree;
 
 public class TreeNode {
     int val;
@@ -15,4 +16,20 @@ public class TreeNode {
         this.left = left;
         this.right = right;
     }
+
+
+    void getTree() {
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(9);
+        TreeNode two = new TreeNode(20);
+        root.right = two;
+        two.left =new TreeNode(15);
+        two.right = new TreeNode(7);
+    }
 }
+
+
+
+
+
+
