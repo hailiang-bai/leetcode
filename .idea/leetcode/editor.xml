@@ -22,6 +22,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/BestTimeToBuyAndSellStockWithCooldown.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/cn/doc/content/BestTimeToBuyAndSellStockWithCooldown.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com309" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/BestTimeToBuyAndSellStockWithCooldown.java" />
+              <option name="titleSlug" value="best-time-to-buy-and-sell-stock-with-cooldown" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetcode/editor/cn/BinaryTreeInorderTraversal.java">
           <value>
             <LeetcodeEditor>
@@ -52,6 +63,17 @@
               <option name="host" value="leetcode-cn.com" />
               <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/ClimbingStairs.java" />
               <option name="titleSlug" value="climbing-stairs" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/CoinChange.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/cn/doc/content/CoinChange.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com322" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/CoinChange.java" />
+              <option name="titleSlug" value="coin-change" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -101,6 +123,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/FindTheDuplicateNumber.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/cn/doc/content/FindTheDuplicateNumber.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com287" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/FindTheDuplicateNumber.java" />
+              <option name="titleSlug" value="find-the-duplicate-number" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetcode/editor/cn/FlattenBinaryTreeToLinkedList.java">
           <value>
             <LeetcodeEditor>
@@ -147,6 +180,17 @@
               <option name="host" value="leetcode-cn.com" />
               <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/HouseRobber.java" />
               <option name="titleSlug" value="house-robber" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/HouseRobberIii.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/cn/doc/content/HouseRobberIii.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com337" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/HouseRobberIii.java" />
+              <option name="titleSlug" value="house-robber-iii" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -240,6 +284,17 @@
               <option name="host" value="leetcode-cn.com" />
               <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/LongestConsecutiveSequence.java" />
               <option name="titleSlug" value="longest-consecutive-sequence" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/LongestIncreasingSubsequence.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/cn/doc/content/LongestIncreasingSubsequence.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com300" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/LongestIncreasingSubsequence.java" />
+              <option name="titleSlug" value="longest-increasing-subsequence" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -417,6 +472,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/MoveZeroes.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/cn/doc/content/MoveZeroes.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com283" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/MoveZeroes.java" />
+              <option name="titleSlug" value="move-zeroes" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetcode/editor/cn/NextPermutation.java">
           <value>
             <LeetcodeEditor>
@@ -493,6 +559,17 @@
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/cn/doc/content/RegularExpressionMatching.md" />
               <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/RegularExpressionMatching.java" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetcode/editor/cn/RemoveInvalidParentheses.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetcode/editor/cn/doc/content/RemoveInvalidParentheses.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com301" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/leetcode/editor/cn/RemoveInvalidParentheses.java" />
+              <option name="titleSlug" value="remove-invalid-parentheses" />
             </LeetcodeEditor>
           </value>
         </entry>
