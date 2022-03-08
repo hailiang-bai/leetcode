@@ -89,7 +89,7 @@ class Solution {
                 stack.add(sb.toString());
             }
         }
-        return stack.toString();
+        return getStrings(stack);
     }
 
     String getStrings(LinkedList<String> sub) {
