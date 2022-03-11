@@ -107,7 +107,7 @@ public class GenerateParentheses {
 
     public static void main(String[] args) {
         Solution solution = new GenerateParentheses().new Solution();
-        List<String> strings = solution.generateParenthesis(3);
+        List<String> strings = solution.generateParenthesis1(3);
         for (String s : strings) {
             System.out.println(s);
         }

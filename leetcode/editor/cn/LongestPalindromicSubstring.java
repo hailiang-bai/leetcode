@@ -46,7 +46,7 @@ package leetcode.editor.cn;
 public class LongestPalindromicSubstring{
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public String longestPalindrome(String s) {
+    public String longestPalindrome2(String s) {
 
         int len=s.length();
         //开数组,dp[i][j]表示是s[i....j]是否是回文
@@ -91,12 +91,43 @@ class Solution {
         }
         return s.substring(begin,begin+maxlen);
     }
+    public String longestPalindrome(String s) {
+        Boolean[][] dp = new Boolean[s.length()][s.length()];
+        for (int i = 0; i < dp.length; i++) {
+            for (int i1 = 0; i1 < dp[i].length; i1++) {
+                dp[i][i1]=false;
+            }
+        }
+        for (int i = s.length()-1; i >= 0; i--) {
+            for (int j = i; j < s.length(); j++) {
+                if(s.charAt(i)==s.charAt(j)){
+                    if(j-i<=1){
+                        dp[i][j]=true;
+                    }else if(dp[i+1][j-1]){
+                        dp[i][j]=true;
+                    }
+                }
+            }
+        }
+        int max=0;
+        String str=null;
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = 0; j < s.length(); j++) {
+                if(dp[i][j]&&max<=j-i){
+                        max=j-i;
+                        str=s.substring(i,j+1);
+                }
+            }
+        }
+        return str;
+
+    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
     public static void main(String[] args){
         Solution solution=new LongestPalindromicSubstring().new Solution();
-        String s = solution.longestPalindrome("bb");
+        String s = solution.longestPalindrome("av");
         System.out.println(s);
     }
 }

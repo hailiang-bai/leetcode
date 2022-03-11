@@ -56,41 +56,8 @@ import java.util.Set;
 public class LongestSubstringWithoutRepeatingCharacters{
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public int lengthOfLongestSubstring(String s) {
-        char[] chars = s.toCharArray();
-        int num=0;
-        int temp=0;
-        int i=0;
-        HashSet<Character> characters = new HashSet<>();
-        char[] array=new char[100];
-        int start=0;
-        int res=0;
-        while(i< chars.length){
-            array[res]=chars[i];
-            if(characters.contains(chars[i])){
-                if(array[res]==array[res-1]){
-                    temp=0;
-                    //保证出现一样的数字后能在第二次再次读到
-                    i -=1;
-                    characters.clear();
-                    start=res;
-                }else {
-                    temp -=1;
-                    start +=1;
-                }
 
-            }else {
-                characters.add(chars[i]);
-                temp +=1;
-                if(temp > num){
-                    num=temp;
-                }
-            }
-            i++;
-            res++;
-        }
-        return num;
-    }
+
     public int lengthOfLongestSubstring2(String s) {
         char[] chars = s.toCharArray();
         HashSet<Character> set = new HashSet<>();
@@ -141,7 +108,7 @@ class Solution {
     public static void main(String[] args){
         Solution solution=new LongestSubstringWithoutRepeatingCharacters().new Solution();
         String s = "dvdf";
-        int num = solution.lengthOfLongestSubstring2(s);
+        int num = solution.lengthOfLongestSubstring3(s);
         System.out.println(num);
     }
 }

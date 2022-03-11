@@ -60,68 +60,62 @@ import java.util.*;
 public class CombinationSum {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-        public List<List<Integer>> combinationSum(int[] candidates, int target) {
-            ArrayList<List<Integer>> combinations = new ArrayList<List<Integer>>();
-            ArrayList<List<Integer>> combinations2 = new ArrayList<List<Integer>>();
+        public List<List<Integer>> combinationSum(int[] candidates, int target){
+            ArrayList<Integer> alongList = new ArrayList<>();
+            List<List<Integer>> resultList = new ArrayList<>();
 
-            int res = 0;
-//            backtrack(combinations, candidates, new ArrayList<Integer>(), target, res);
-            dfs(candidates,target,combinations,new ArrayList<Integer>(),0);
+            traceBack(candidates,alongList,resultList,target,0,0);
+            return resultList;
+        }
+
+        private void traceBack(int[] candidates, ArrayList<Integer> alongList, List<List<Integer>> resultList, int target, int sum,int start) {
+            if(sum==target){
+                resultList.add(new ArrayList(alongList));
+                            }
+            if(sum<=target){
+                for (int i = start; i < candidates.length; i++) {
+                    alongList.add(candidates[i]);
+                    sum +=candidates[i];
+                    traceBack(candidates,alongList,resultList,target,sum,i);
+                    alongList.remove(alongList.size()-1);
+                    sum -=candidates[i];
+                }
+
+            }
+
+        }
 
 
-//            int[][] nums=new int[100][100];
-//            int flog=1;
-//            for (List<Integer> combination : combinations) {
-//                Object[] objects = combination.toArray();
-//                Arrays.sort(objects);
-//
+
+//        public List<List<Integer>> combinationSum(int[] candidates, int target) {
+//            ArrayList<Integer> alongList = new ArrayList<>();
+//            ArrayList<List<Integer>> resultList = new ArrayList<>();
+//            dfs(candidates, 0,resultList, alongList, 0, target);
+//            return resultList;
+//        }
+//        public  void dfs(int[] candidates, int start, ArrayList<List<Integer>> resultList, List<Integer> nums, int cur, int target) {
+//            if (cur == target) {
+//                resultList.add(new ArrayList<>(nums));
 //
 //            }
-            return combinations;
-        }
+//            if(cur<=target)
+//            for (int i = start; i < candidates.length; i++) {
+//
+//                cur += candidates[i];
+//                nums.add(candidates[i]);
+//                dfs(candidates, i, resultList, nums, cur, target);
+//                nums.remove(nums.size() - 1);
+//                cur -= candidates[i];
+//            }
+//        }
 
-        void backtrack(ArrayList<List<Integer>> combinations, int[] candidates, ArrayList<Integer> combination, int target, int res) {
-            if (res == target) {
-                System.out.println(combination);
-                combinations.add(new ArrayList<Integer>(combination)); //List要在放入ArrayList转化
-
-                return;
-            } else if (res > target) {
-                return;
-            }
-            for (int i = 0; i < candidates.length; i++) {
-                combination.add(candidates[i]);
-                res += candidates[i];
-                backtrack(combinations, candidates, combination, target, res);
-                res -= candidates[i];
-//            combination.remove(index);
-                //可以用size记录ArrayList大小
-                combination.remove(combination.size() - 1);
-            }
-        }
-
-        public void dfs(int[] candidates, int target, List<List<Integer>> ans, List<Integer> combine, int idx) {
-             if (idx == candidates.length) {
-                return;
-            }
-            if (target == 0) {
-                ans.add(new ArrayList<Integer>(combine));
-                return;
-            }
-            dfs(candidates, target, ans, combine, idx + 1);
-            if (target - candidates[idx] >= 0) {
-                combine.add(candidates[idx]);
-                dfs(candidates, target - candidates[idx], ans, combine, idx);
-                combine.remove(combine.size() - 1);
-            }
-        }
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
     public static void main(String[] args) {
         Solution solution = new CombinationSum().new Solution();
-        List<List<Integer>> lists = solution.combinationSum(new int[]{2, 3, 6, 7}, 7);
-        System.out.println(lists);
+        solution.combinationSum(new int[]{2, 3, 6, 7}, 7);
+
 
     }
 }

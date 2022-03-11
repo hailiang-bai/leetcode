@@ -65,7 +65,6 @@ class Solution {
             max=Math.max(pre,max);
 
         }
-        System.out.println(max);
         return max;
     }
 }

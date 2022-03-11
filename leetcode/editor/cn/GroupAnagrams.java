@@ -50,26 +50,13 @@ class Solution {
             char[] charArray = str.toCharArray();
             Arrays.sort(charArray);
             String key = new String(charArray);
-
-//            if (stringListHashMap.containsKey(key)){
-//                List<String> strings = stringListHashMap.get(key);
-//                strings.add(str);
-//                stringListHashMap.put(key, strings);
-//            }else{
-//                stringListHashMap.put(key, Collections.singletonList(str));
-//            }
             List<String> list = stringListHashMap.getOrDefault(key, new ArrayList<String>());
             list.add(str);
             stringListHashMap.put(key,list);
             //不能使用charArray.toString()
 
         }
-//        Iterator<Map.Entry<String, List<String>>> iterator = stringListHashMap.entrySet().iterator();
-//        while (iterator.hasNext()){
-//            Map.Entry next = iterator.next();
-//            System.out.println(next.getKey()+" "+next.getValue());
-//        }
-//        ArrayList<List<String>> values = (ArrayList<List<String>>) stringListHashMap.values();
+
         return new ArrayList<List<String>>(stringListHashMap.values());
     }
 
@@ -79,7 +66,7 @@ class Solution {
 
     public static void main(String[] args){
         Solution solution=new GroupAnagrams().new Solution();
-        String[] strs={"tan","nat"};
+        String[] strs={"tan","nat","scc"};
         solution.groupAnagrams(strs);
     }
 }
