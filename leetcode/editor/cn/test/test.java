@@ -1,28 +1,26 @@
 package leetcode.editor.cn.test;
 
+import java.util.Stack;
+
 public class test {
-    static void bag(){
-        int[] weight={1,3,4};
-        int[] value={15,20,30};
-        int bagWeight=4;
+    Stack<Integer> stack1= new Stack<Integer>();
+    Stack<Integer> stack2= new Stack<Integer>();
 
-        int[] dp = new int[bagWeight + 1];
-        for (int i : dp) {
-            i=0;
-        }
+    void myPush(int value){
+        stack1.push(value);
+    }
 
-        for (int i = 0; i < weight.length ; i++) {
-            for (int j = bagWeight; j >=weight[i] ; j--) {
-                dp[j]=Math.max(dp[j],dp[j-weight[i]]+value[i]);
+    int myPop(){
+        if(stack2.isEmpty()&&!stack1.isEmpty()){
+            while (!stack1.isEmpty()){
+                stack2.push(stack1.pop());
             }
-        }
-        for (int i = 0; i < dp.length; i++) {
-            System.out.println(dp[i]);
-        }
 
+        }
+        return stack2.pop();
     }
 
     public static void main(String[] args) {
-        bag();
+        ;
     }
 }
