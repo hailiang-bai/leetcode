@@ -1,5 +1,8 @@
 package leetcode.editor.cn.test;
 
+import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 //public class Main {
 //    public static void main(String[] args) {
@@ -21,20 +24,24 @@ import java.util.Scanner;
 //}
 
 
-//class Main {
-//    public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-//        int n = sc.nextInt();
-//        int ans = 0, x;
-//        for(int i = 0; i < n; i++){
-//            for(int j = 0; j < n; j++){
-//                x = sc.nextInt();
-//                ans += x;
-//            }
-//        }
-//        System.out.println(ans);
-//    }
-//}
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int res=0;
+        int i;
+        if(n%2==0){
+            i=2;
+        }else {
+            i=1;
+        }
+        while (i<=n){
+            res += i;
+            i=i+2;
+        }
+        System.out.println(res);
+    }
+}
 //class Main {
 //    static int time;
 //
@@ -128,43 +135,44 @@ import java.util.Scanner;
 //            }
 //        }
 //}
-
-class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        int len = sc.nextInt();
-        int[][] list = new int[len][3];
-        int[] ints = new int[num];
-        for (int i = 0; i < len; i++) {
-            int a= sc.nextInt();
-            int b= sc.nextInt();
-            int c= sc.nextInt();
-            list[i][0]=a;
-            list[i][1]=b;
-            list[i][2]=c;
-        }
-        int[][] list2 = {{1,2,3},{1,3,4},{2,3,5}};
-
-
-    }
-    public int getTowNum(int[] nums){
-        int[] temp = new int[2];
-        temp[0]=nums[0]>nums[1] ? nums[1]:nums[0];
-        temp[1]=nums[0]<nums[1] ? nums[1]:nums[0];
-        for (int i = 2; i < nums.length; i++) {
-            if(temp[0]<nums[i]){
-                temp[0]=nums[i];
-                if(temp[0]>temp[1]){
-                    int tmp=temp[0];
-                    temp[0]=temp[1];
-                    temp[1]=temp[0];
-                }
-            }
-        }
-        return temp[0];
-    }
-}
+//public class TreeNode {
+//    int val;
+//    TreeNode left;
+//    leetcode.editor.cn.construction.TreeNode right;
+//    TreeNode() {}
+//    TreeNode(int val) {
+//        this.val = val;
+//    }
+//    TreeNode(int val, TreeNode left, TreeNode right) {
+//        this.val = val;
+//        this.left = left;
+//        this.right = right;
+//    }
+//public class Solution {
+//    /**
+//     *
+//     * @param root TreeNode类
+//     * @return int整型ArrayList
+//     */
+//    public ArrayList<Integer> preorderTraversal (TreeNode root) {
+//        // write code here
+//        LinkedList<TreeNode> queue= new LinkedList<TreeNode>();
+//        ArrayList<Integer> list=new ArrayList<Integer>();
+//        queue.offer(root);
+//
+//        while(!queue.isEmpty()){
+//            int size=queue.size();
+//            for(int i=0;i<size;i++){
+//                TreeNode node= queue.poll();
+//                list.add(node.val);
+//                if(root.left!=null) queue.offer(root.left);
+//                if(root.right!=null) queue.offer(root.right);
+//            }
+//        }
+//        return list;
+//
+//    }
+//}
 
 //class Main {
 //    public static void main(String[] args) {
