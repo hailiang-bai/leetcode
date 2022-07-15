@@ -84,6 +84,7 @@ public class RemoveNthNodeFromEndOfList {
             slow.next=slow.next.next;
 
             return pre.next;
+
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
@@ -92,12 +93,12 @@ public class RemoveNthNodeFromEndOfList {
         Solution solution = new RemoveNthNodeFromEndOfList().new Solution();
 
         ListNode l1 = new ListNode(1);
-//        l1.next=new ListNode(2);
+        l1.next=new ListNode(2);
 //        l1.next.next=new ListNode(3);
-//        l1.next.next.next=new ListNode(4);
+//       l1.next.next.next=new ListNode(4);
 //        l1.next.next.next.next=new ListNode(5);
 
-        ListNode listNode = solution.removeNthFromEnd(l1, 1);
+        ListNode listNode = solution.removeNthFromEnd(l1, 2);
         while (listNode !=null){
             System.out.println(listNode.val);
             listNode=listNode.next;

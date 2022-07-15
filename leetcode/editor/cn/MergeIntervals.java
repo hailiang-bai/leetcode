@@ -52,6 +52,7 @@ class Solution {
         });
         ArrayList<int[]> mergeList = new ArrayList<int[]>();
 
+
         for (int i = 0; i < intervals.length; i++) {
             int L=intervals[i][0];
             int R=intervals[i][1];
@@ -63,7 +64,7 @@ class Solution {
 
         }
 
-
+//https://blog.csdn.net/weixin_40139164/article/details/111120217
         return mergeList.toArray(new int[mergeList.size()][]);
     }
 }
@@ -71,7 +72,7 @@ class Solution {
 
     public static void main(String[] args){
         Solution solution=new MergeIntervals().new Solution();
-        int[][] ints={{1,4},{1,4}};
+        int[][] ints={{1,3},{2,6},{8,10},{15,19}};
         int[][] merge = solution.merge(ints);
         for (int i = 0; i < merge.length; i++) {
             System.out.println(merge[i][0]+" "+merge[i][1]);

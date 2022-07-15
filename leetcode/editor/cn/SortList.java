@@ -79,10 +79,10 @@ public static class ListNode {
 class Solution {
     public ListNode sortList(ListNode head) {
         // 这里tail初始值必须填null,不能填最后一个节点,例[2,1]在重载函数的第二个if即返回
-        return sortList(head, null);
+        return mySort(head, null);
     }
 
-    private ListNode sortList(ListNode head, ListNode tail) {
+    private ListNode mySort(ListNode head, ListNode tail) {
         //终止条件 自己写的时候没搞清楚
         if(head==null){
             return head;
@@ -102,8 +102,9 @@ class Solution {
             }
         }
         ListNode mid=slow;
-        ListNode list1 = sortList(head, mid);
-        ListNode list2 = sortList(mid, tail);
+        //tail设置为null是因为只会用到tail之前的数
+        ListNode list1 = mySort(head, mid);
+        ListNode list2 = mySort(mid, tail);
         return merge(list1,list2);
     }
 
