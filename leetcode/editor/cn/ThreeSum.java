@@ -48,46 +48,34 @@ public class ThreeSum{
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> lists = new ArrayList<List<Integer>>();
-        if(nums.length<3){
-            return lists;
-        }
         Arrays.sort(nums);
-        int start;
-        int res;
-        for (int i = 0; i < nums.length; i++) {
-            if(i > 0&&nums[i]==nums[i-1]){
-                continue;
+        List<List<Integer>> lists=new ArrayList<List<Integer>>();
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]>0) return lists;
+            if(i>0&&nums[i]==nums[i-1]) continue;
+            int tmp=nums[i];
+            int L=i+1;
+            int R=nums.length-1;
+            while(L<R){
+                int sum=tmp+nums[L]+nums[R];
+                if(sum==0){
+                    ArrayList<Integer> list= new ArrayList<Integer>();
+                    list.add(tmp);
+                    list.add(nums[L]);
+                    list.add(nums[R]);
+                    while(L<R&&nums[L]==nums[L+1]) L++;
+                    while(L<R&&nums[R]==nums[R-1]) R--;
+                    L++;
+                    R--;
+                }else if(sum<0){
+                    L++;
+                }else{
+                    R--;
+                }
             }
-            start=i;
-            res= nums.length-1;
-            while (start<res){
 
-                if (start==i){
-                    start++;
-                    continue;
-                }
-                if (res==i){
-                    start--;
-                    continue;
-                }
-                if(nums[i] + nums[start]+nums[res] == 0){
-                    ArrayList<Integer> list = new ArrayList<>();
-                    list.add(nums[i]);
-                    list.add(nums[start]);
-                    list.add(nums[res]);
-                    lists.add(list);
-                    res--;
-                    while (nums[res]==nums[res-1]&&res>start){
-                        res--;
-                    }
-                }else if(nums[i] + nums[start]+nums[res] >0){
-                    res--;
-                }else {
-                    start++;
-                }
-            }
         }
+
         return lists;
     }
 
@@ -132,7 +120,7 @@ class Solution {
 
     public static void main(String[] args){
         Solution solution=new ThreeSum().new Solution();
-        List<List<Integer>> lists = solution.threeSum2(new int[]{-1,0,1,2,-1,-4});
+        List<List<Integer>> lists = solution.threeSum(new int[]{-1,0,1,2,-1,-4});
         for (List list:lists) {
             for (Object l : list) {
                 System.out.println(l);

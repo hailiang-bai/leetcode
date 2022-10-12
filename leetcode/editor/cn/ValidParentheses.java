@@ -55,43 +55,44 @@
 
 package leetcode.editor.cn;
 
-import java.util.HashMap;
-import java.util.Stack;
+import java.util.*;
 
 public class ValidParentheses{
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean isValid(String s) {
-        HashMap<Character, Character> stringStringHashMap = new HashMap<>();
-        stringStringHashMap.put(')','(');
-        stringStringHashMap.put(']','[');
-        stringStringHashMap.put('}','{');
-        Stack<Character> stack = new Stack<>();
-        if(s.length()%2==1){
-            return false;
-        }
-        for (int i = 0; i < s.length(); i++) {
-            if(stringStringHashMap.get(s.charAt(i))!=null){
-                if(stack.isEmpty()){
-                    return false;
-                }
-                Character pop = stack.pop();
-                if(stringStringHashMap.get(s.charAt(i))!=pop){
-                    return false;
+        Map<Character,Character> map = new HashMap<>();
+        map.put('(',')');
+        map.put('[',']');
+        map.put('{','}');
+        Deque<Character> stack = new LinkedList<>();
+        for(int i=0;i<s.length();i++){
+            if(stack.isEmpty()){
+                stack.push(s.charAt(i));
+            }else{
+
+                if(map.get(stack.peek())==null){
+                    stack.push(s.charAt(i));
+                }else{
+                    if(map.get(stack.peek())==s.charAt(i)){
+                        stack.pop();
+                    }else {
+                        stack.push(s.charAt(i));
+                    }
                 }
             }
-            else if(stringStringHashMap.get(s.charAt(i))==null){
-                stack.add(s.charAt(i));
-            }
         }
-       return stack.isEmpty() ;
+        if(stack.isEmpty()){
+            return true;
+        }
+        return false;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
     public static void main(String[] args){
         Solution solution=new ValidParentheses().new Solution();
-        boolean valid = solution.isValid("){");
+        boolean valid = solution.isValid("(]");
         System.out.println(valid);
     }
 }

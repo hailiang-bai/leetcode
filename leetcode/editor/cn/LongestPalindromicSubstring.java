@@ -127,7 +127,7 @@ class Solution {
 
     public static void main(String[] args){
         Solution solution=new LongestPalindromicSubstring().new Solution();
-        String s = solution.longestPalindrome("av");
+        String s = solution.longestPalindrome("abbac");
         System.out.println(s);
     }
 }

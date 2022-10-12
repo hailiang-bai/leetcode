@@ -25,6 +25,16 @@ public class TreeNode {
         root.right = two;
         two.left =new TreeNode(15);
         two.right = new TreeNode(7);
+
+//        TreeNode root = new TreeNode(3);
+//        TreeNode one= new TreeNode(9)
+//        root.left = one ;
+//        one.left=new TreeNode(1);
+//        one.right=new TreeNode(2);
+//        TreeNode two = new TreeNode(20);
+//        root.right = two;
+//        two.left =new TreeNode(15);
+//        two.right = new TreeNode(7);
     }
 }
 

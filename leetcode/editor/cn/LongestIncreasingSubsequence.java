@@ -73,5 +73,6 @@ class Solution {
 
     public static void main(String[] args){
         Solution solution=new LongestIncreasingSubsequence().new Solution();
+        solution.lengthOfLIS(new int[]{0,1,0,3,2,3});
     }
 }

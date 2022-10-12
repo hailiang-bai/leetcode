@@ -51,17 +51,43 @@ public class SearchInRotatedSortedArray{
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int search(int[] nums, int target) {
-        for (int i = 0; i < nums.length; i++) {
-            if(nums[i]==target){
-                return i;
-            }
+        if(nums.length==0){
+            return -1;
         }
+        if(nums.length==1){
+            return nums[0]==target ? 0: -1;
+
+        }
+        int L=0;
+        int R=nums.length-1;
+        while(L<=R){
+            int mid=L +(R-L)/2;
+            if(nums[mid]==target) return mid;
+            if(nums[L]<nums[mid]){//左边有序
+                if(nums[L]<=target&&target<nums[mid]){ //如果在有序的一边
+                    R=mid-1;
+                }else {
+                    L=mid+1;
+                }
+            }else {//右边有序
+                if(nums[mid]<target &&target<=nums[R]){ //如果在有序的一边
+                    L=mid+1;
+                }else {
+                    R=mid-1;
+                }
+            }
+
+        }
+
         return -1;
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
     public static void main(String[] args){
         Solution solution=new SearchInRotatedSortedArray().new Solution();
+        int search = solution.search(new int[]{4, 5, 6, 7, 0, 1, 2}, 0);
+        System.out.println(search);
     }
 }

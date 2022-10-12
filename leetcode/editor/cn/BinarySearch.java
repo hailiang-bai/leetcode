@@ -29,6 +29,7 @@
 
 package leetcode.editor.cn;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class BinarySearch{
@@ -57,6 +58,7 @@ class Solution {
     public static void main(String[] args){
         Solution solution=new BinarySearch().new Solution();
         solution.search(new int[]{-1,0,3,5,9,12},9);
+        HashMap<Integer, Integer> mao = new HashMap<>();
 
     }
 }

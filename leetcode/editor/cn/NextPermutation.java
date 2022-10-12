@@ -52,41 +52,22 @@ public class NextPermutation {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public void nextPermutation(int[] nums) {
-            int length = nums.length;
-            if (length <= 1) {
-                return;
-            }
-            boolean flog = false;
-            boolean flog2 = true;
-            int shortIndex;
-            int moreIndex;
-            for (int i = length - 1; i >= 1; i--) {
-                if (nums[i] > nums[i - 1]) {
-                    shortIndex = i - 1;
-                    moreIndex = i;
-                    for (int j = length - 1; j > shortIndex; j--) {
-                        if (nums[j] > nums[shortIndex] && nums[j] <= nums[moreIndex]) {
-                            if (flog2 && nums[j] == nums[moreIndex]) {
-                                moreIndex = j; //执行一次就不能执行了，只用于判断是否相等跟最后一个
-                                flog2 = false;
-                            } else if (nums[j] != nums[moreIndex]) {
-                                moreIndex = j;
-                                flog2 = false;
-                            }
-
-                        }
-                    }
-                    swap(nums, shortIndex, moreIndex);
-                    reverse(i, length - 1, nums);
-                    flog = true;
+            int indexI=-1;
+            for(int i=nums.length-2;i>=0 ;i--){
+                if(nums[i]<nums[i+1]){
+                    indexI=i;
                     break;
                 }
             }
-            if (!flog) {
-                int start = 0;
-                int end = nums.length - 1;
-                reverse(start, end, nums);
+            if(indexI>=0){
+                for(int i=nums.length-1;i>0 ;i--){
+                    if(nums[i]>nums[indexI]){
+                        swap(nums,i,indexI);
+                        break;
+                    }
+                }
             }
+            reverse(indexI+1,nums.length-1,nums);
         }
 
         public void swap(int[] arr, int a, int b) {
@@ -111,7 +92,8 @@ public class NextPermutation {
         int[] ints = {1, 2, 4, 7, 6};
         int[] ints2 = {2, 1, 2, 2, 2, 2, 2, 1};
         int[] ints3 = {3, 4, 1, 4, 3, 3};
-        solution.nextPermutation(ints2);
+        int[] ints4 = {1,3,2};
+        solution.nextPermutation(ints4);
         pprint(ints2);
 
     }

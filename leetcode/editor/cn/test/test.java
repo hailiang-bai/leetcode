@@ -2,7 +2,7 @@ package leetcode.editor.cn.test;
 
 import java.util.Stack;
 
-public class test {
+public class test implements hhhh{
     Stack<Integer> stack1= new Stack<Integer>();
     Stack<Integer> stack2= new Stack<Integer>();
 
@@ -20,7 +20,20 @@ public class test {
         return stack2.pop();
     }
 
+
+
+    @Override
+    public void nihao() {
+
+    }
+
+    @Override
+    public void hah(int a) {
+        hhhh.super.hah(a);
+    }
+
     public static void main(String[] args) {
-        ;
+        test sss = new test();
+        sss.hah(2);
     }
 }
